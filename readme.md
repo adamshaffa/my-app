@@ -1,13 +1,28 @@
-Aplikasi CRUD sederhana menggunakan Node.js, Express, dan Docker
+# Docker Node MySQL Example
 
-Instalasi
-Instal Docker.
-Clone repositori:
-git clone https://github.com/adamshaffa/my-app.git
-Menjalankan aplikasi
-Jalankan perintah berikut di terminal Anda:
+> Simple example of a dockerized Node/MySQL app
+
+## Quick Start
+
+```bash
+# Run in Docker
 docker-compose up
-Aplikasi akan berjalan di port 3000. Anda dapat mengaksesnya di browser dengan mengunjungi http://localhost:3000.
+# use -d flag to run in background
 
-Menambahkan operasi CRUD
-Untuk menambahkan operasi CRUD ke aplikasi, Anda dapat mengedit file app.js.
+# Tear down
+docker-compose down
+
+# To be able to edit files, add volume to compose file
+volumes: ['./:/usr/src/app']
+
+# To re-build
+docker-compose --build
+```
+## Normal Start
+You can start node application with usual 'npm start' command as well.
+* Make sure to edit server.js and update the host with your host address. 
+* App uses default 3306 database connectivity port.
+* Create database with the name 'node_crud'.
+
+
+
